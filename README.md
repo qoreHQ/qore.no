@@ -2,3 +2,11 @@
 
 # Webpage for qore
 https://qore.no
+
+## Credits
+
+Bootstrap
+http://getbootstrap.com
+
+jQuery
+http://jquery.com
