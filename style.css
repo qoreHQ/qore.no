@@ -1,7 +1,7 @@
 html {
 	margin-top: 3%;
 	padding: 0;
-	background-color: #1d1d1d;
+	background-color: white;
 }
 
 body {
@@ -9,7 +9,7 @@ body {
 	padding: 0;
 	max-width: 1500px;
 	height: 100%;
-	background-color: #242424;
+	background-color: white;
 	/*border: 1px solid #1A1A1A;*/
 }
 
@@ -48,18 +48,18 @@ header div span {
 section.top {
 	height: 840px;
 	width: 100%;
-	background: #242424 url("img/headerWeb.jpg") no-repeat fixed right top;
+	background: white url("img/headerWeb.jpg") no-repeat fixed right top;
 }
 
 section.top img {
-	width: 400px;
+	width: 250px;
 	height: auto;
 	
 	/* Alignment */
 	position: relative;
 	top: 50%;
 	left: 50%;
-	transform: translateY(-25%) translateX(-50%);
+	transform: translateY(-50%) translateX(-50%);
 }
 
 section#intro {
@@ -75,7 +75,7 @@ section#intro ul {
 }
 section#intro a {
 	display: inline-block;
-	background-color: #1d1d1d;
+	background-color: rgba(100, 100, 100, 1);
 	padding: 20px;
 	margin: 0 0 0 0;
 	width: 200px;
@@ -117,7 +117,6 @@ section#intro div {
 @media screen and (max-width: 1500px) {
 	html {
 		margin: 0;
-		background-color: #242424;
 	}
 }
 
@@ -129,7 +128,7 @@ section#intro div {
 		height: 600px;
 	}
 	section.top img {
-		width: 300px;
+		width: 200px;
 	}
 }
 
@@ -138,7 +137,7 @@ section#intro div {
 		height: 400px;
 	}
 	section.top img {
-		width: 200px;
+		width: 150px;
 	}
 	section#intro a {
 		width: 100px;
