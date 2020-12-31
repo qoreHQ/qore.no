@@ -15,12 +15,22 @@ p {
 	font-size: 1.2rem;
 }
 
+a {
+	text-decoration: underline;
+	color: inherit;
+}
+
 h1, h2, h3, h4, h5, h6 {
 	font-family: "Input Mono", Monospace;
 }
 
 h2 {
 	font-size: 2rem;
+}
+
+h3 {
+	font-weight: 300;
+	font-size: 1.8rem;
 }
 
 hr {
@@ -30,21 +40,30 @@ hr {
 	border: 0;
 }
 
+.section_header {
+	background: url(../img/geo_white.svg) repeat-x top center;
+	background-size: auto 30vh;
+}
+
 .section_introduction {
 	width: 25vw;
 	margin-left: 10vw;
-	padding-top: 10vh;
-	padding-bottom: 10vh;
+	padding-top: 15vh;
+	padding-bottom: 15vh;
+}
+
+.section_introduction .top-logo {
+	width: 50%;
+	max-width: 180px;
+	margin-bottom: 2.5vh;
 }
 
 .section_introduction hr {
 	margin-right: -20vw;
 	background-color: white;
 	height: 1px;
-}
-
-.section_introduction .top-logo {
-	width: 50%;
+	position: relative;
+	z-index: 20;
 }
 
 .section_coverimage {
@@ -53,7 +72,7 @@ hr {
 	position: absolute;
 	top: 10vh;
 	right: 10vw;
-	z-index: -10;
+	z-index: 10;
 	background: url(../img/pexels-maria-orlova-4916517.jpg) no-repeat center center;
 	background-size: cover;
 }
@@ -68,28 +87,39 @@ hr {
 	right: 5vw;
 	font-family: "Input Mono", Monospace;
 	font-size: 3rem;
-	color: #000;
+	color: #FFF;
 }
 
 .section_subheader {
-	z-index: -20;
+	z-index: 5;
 	position: relative;
 	color: #000;
 	background-color: #FFF;
-	padding: 10vh 0 30vh 10vw;
+	padding: 10vh 65vw 30vh 10vw;
 }
 
-.section_subheader p {
+.section_subheader span {
 	color: #888;
 	padding-bottom:0;
+	font-size: 1.2rem;
+}
+
+.section_subheader .logo {
+	margin-top: 2.5vh;
+	margin-bottom: 2.5vh;
+	width: 2.5vw;
 }
 
 .section_content {
 	position: absolute;
-	top: 100vh;
+	width: 100vw;
+	top: 200vh;
+	background: url(../img/geo_black.svg) repeat-x bottom center;
+	background-size: auto 30vh;
 	background-color: #FFF;
 	color: #000;
-	padding: 10vh 10vw 10vh 10vw;
+	padding: 0 10vw 10vh 10vw;
+	/* padding: 10vh 10vw 10vh 10vw; */
 }
 
 .section_content > p {
@@ -97,13 +127,14 @@ hr {
 }
 
 .section_footer {
-	margin: 10vh 0 0 0;
+	margin: 15vh 0 35vh 0;
 	font-family: "Input Mono", Monospace;
 }
 
 
 .section_footer .logo {
-	width: 2vw;
+	width: 2.5vw;
+	min-width: 25px;
 	margin: auto;
 	display: block;
 }
@@ -119,3 +150,24 @@ hr {
 	padding-top: .5em;
 	text-align: right;
 }
+
+@media screen and (max-width: 900px) {
+	.section_introduction {
+		width: 35vw;
+		margin-left: 5vw;
+	}
+	.section_coverimage {
+		width: 50vw;
+		right: 5vw;
+	}
+	.section_subheader {
+		padding: 10vh 60vw 30vh 5vw;
+
+	}
+}
+
+/* @media screen and (max-width: 600px) {
+	.section_introduction p {
+
+	}
+} */
