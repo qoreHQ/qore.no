@@ -1,6 +1,7 @@
 body {
 	background-color: #000;
 	color: #fff;
+	font-family: Roboto, sans-serif;
 }
 
 
@@ -8,4 +9,113 @@ a, p, span, h1, h2, h3, h4, h5, h6, table {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	text-rendering: optimizelegibility;
+}
+
+p {
+	font-size: 1.2rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Input Mono", Monospace;
+}
+
+h2 {
+	font-size: 2rem;
+}
+
+hr {
+	height: 2px;
+	background-color: black;
+	margin-right: -20vw;
+	border: 0;
+}
+
+.section_introduction {
+	width: 25vw;
+	margin-left: 10vw;
+	padding-top: 10vh;
+	padding-bottom: 10vh;
+}
+
+.section_introduction hr {
+	margin-right: -20vw;
+	background-color: white;
+	height: 1px;
+}
+
+.section_introduction .top-logo {
+	width: 50%;
+}
+
+.section_coverimage {
+	width: 45vw;
+	height: 80vh;
+	position: absolute;
+	top: 10vh;
+	right: 10vw;
+	z-index: -10;
+	background: url(../img/pexels-maria-orlova-4916517.jpg) no-repeat center center;
+	background-size: cover;
+}
+
+.section_coverimage img {
+	width: 100%;
+}
+
+.section_coverimage .coverimage-text {
+	position: absolute;
+	top: 5vh;
+	right: 5vw;
+	font-family: "Input Mono", Monospace;
+	font-size: 3rem;
+	color: #000;
+}
+
+.section_subheader {
+	z-index: -20;
+	position: relative;
+	color: #000;
+	background-color: #FFF;
+	padding: 10vh 0 30vh 10vw;
+}
+
+.section_subheader p {
+	color: #888;
+	padding-bottom:0;
+}
+
+.section_content {
+	position: absolute;
+	top: 100vh;
+	background-color: #FFF;
+	color: #000;
+	padding: 10vh 10vw 10vh 10vw;
+}
+
+.section_content > p {
+	padding: .5vh 5vw .5vh 5vw;
+}
+
+.section_footer {
+	margin: 10vh 0 0 0;
+	font-family: "Input Mono", Monospace;
+}
+
+
+.section_footer .logo {
+	width: 2vw;
+	margin: auto;
+	display: block;
+}
+
+.section_footer p {
+	width: 50%;
+	float: left;
+	display: block;
+	margin-top: 5vh;
+}
+
+.section_footer p:last-child {
+	padding-top: .5em;
+	text-align: right;
 }
