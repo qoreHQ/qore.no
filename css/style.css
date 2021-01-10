@@ -99,7 +99,7 @@ hr {
 	position: absolute;
 	top: 5vh;
 	right: 5vw;
-	font-family: "Input Mono", Monospace;
+	font-family: "JetBrains Mono", monospace;
 	font-size: 3rem;
 	color: #FFF;
 }
@@ -152,7 +152,7 @@ hr {
 
 .section_footer {
 	margin: 15vh 0 35vh 0;
-	font-family: "Input Mono", Monospace;
+	font-family: "JetBrains Mono", monospace;
 	padding: 0 10vw 0 10vw;
 }
 
