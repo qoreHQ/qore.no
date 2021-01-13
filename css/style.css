@@ -128,8 +128,9 @@ hr {
 	background-color: #000;
 	color: white;
 	width: 55vw;
-	margin-left: 45vw;
+	margin-left: auto;
 	padding: 5vh 10vw 5vh 5vh;
+	
 }
 
 .section_portfolio h2 {
@@ -138,12 +139,12 @@ hr {
 .section_content {
 	z-index: 30;
 	position: absolute;
+	width: 100%;
 	top: 100vh;
+	padding: 0 0 10vh 0;
 	background: url(../img/geo_black.svg) repeat-x bottom center;
 	background-size: auto 30vh;
 	color: #000;
-	padding: 0 0 10vh 0;
-	/* padding: 10vh 10vw 10vh 10vw; */
 }
 
 .section_content > p {
