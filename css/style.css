@@ -125,7 +125,11 @@ hr {
 	top: 10vh;
 	right: 10vw;
 	z-index: 10;
-	background: url(../img/pexels-maria-orlova-4916517.jpg) no-repeat center center;
+	background: url("../img/pexels-maria-orlova-4916517.jpg") no-repeat center center;
+	background: -webkit-image-set(
+		url("../img/pexels-maria-orlova-4916517.jpg") 1x,
+		url("../img/pexels-maria-orlova-4916517@2x.jpg") 2x
+	) no-repeat center center;
 	background-size: cover;
 }
 
