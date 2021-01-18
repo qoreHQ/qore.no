@@ -1,9 +1,41 @@
-body {
-	background-color: #fff;
-	color: #000;
-	font-family: "Roboto", Helvetica, Arial, sans-serif;
+:root {
+	--background: #fff;
+	--foreground: #000;
+	--accent: #5d7587;
+	--secondary-background: #000;
+	--secondary-foreground: #fff;
+	--secondary-accent: #fff;
+	--logo: url(../img/qore-logo-black.svg);
+	--lower-texture: url(../img/geo_lower_black.svg);
 }
 
+@media (prefers-color-scheme: dark) {
+	:root {
+		--background: #1C1E27;
+		--foreground: #fff;
+		--accent: #85eea7;
+		--secondary-background: rgba(255, 255, 255, .025);
+		--secondary-foreground: #fff;
+		--secondary-accent: #fcee54;
+		--logo: url(../img/qore-logo-white.svg);
+		--lower-texture: url(../img/geo_lower_white.svg);
+	}
+}
+
+::selection { 
+	background-color: var(--accent); 
+	color: var(--background);
+}
+::-moz-selection { 
+	background-color: var(--accent); 
+	color: var(--background);
+}
+
+body {
+	background-color: var(--background);
+	color: var(--foreground);
+	font-family: "Roboto", Helvetica, Arial, sans-serif;
+}
 
 a, p, span, h1, h2, h3, h4, h5, h6, table {
 	-webkit-font-smoothing: antialiased;
@@ -18,6 +50,13 @@ p {
 a {
 	text-decoration: underline;
 	color: inherit;
+	/* color: var(--accent); */
+}
+a:hover {
+	color: var(--accent);
+}
+a:active {
+	color: var(--secondary-accent);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -28,7 +67,7 @@ h2 {
 	font-size: 2rem;
 }
 h2 a {
-	text-decoration: none;
+	/* text-decoration: none; */
 }
 
 h3 {
@@ -38,7 +77,7 @@ h3 {
 
 hr {
 	height: 2px;
-	background-color: #000;
+	background-color: var(--secondary-foreground);
 	margin-right: -20vw;
 	border: 0;
 }
@@ -50,8 +89,8 @@ hr {
 .section_header {
 	background: url(../img/geo_white.svg) repeat-x top center;
 	background-size: auto 30vh;
-	background-color: #000;
-	color: #fff;
+	background-color: var(--secondary-background);
+	color: var(--secondary-foreground);
 	padding-top: 15vh;
 	padding-bottom: 15vh;
 }
@@ -69,7 +108,6 @@ hr {
 
 .section_introduction hr {
 	margin-right: -20vw;
-	background-color: white;
 	height: 1px;
 	position: relative;
 	z-index: 20;
@@ -101,19 +139,19 @@ hr {
 	right: 5vw;
 	font-family: "JetBrains Mono", monospace;
 	font-size: 3rem;
-	color: #FFF;
+	color: var(--secondary-foreground);
 }
 
 .section_subheader {
 	z-index: 40;
 	position: relative;
-	color: #000;
+	/* color: #000; */
 	width: 35vw;
 	padding: 15vh 0 30vh 10vw;
 }
 
 .section_subheader span {
-	color: #888;
+	color: var(--foreground);
 	padding-bottom:0;
 	font-size: 1.2rem;
 }
@@ -125,8 +163,8 @@ hr {
 }
 
 .section_portfolio {
-	background-color: #000;
-	color: white;
+	background-color: var(--secondary-background);
+	color: var(--secondary-foreground);
 	width: 55vw;
 	margin-left: auto;
 	padding: 5vh 10vw 5vh 5vh;
@@ -141,10 +179,9 @@ hr {
 	position: absolute;
 	width: 100%;
 	top: 100vh;
-	padding: 0 0 10vh 0;
-	background: url(../img/geo_black.svg) repeat-x bottom center;
+	background: var(--lower-texture) repeat-x bottom center;
 	background-size: auto 30vh;
-	color: #000;
+	padding: 0 0 10vh 0;
 }
 
 .section_content > p {
@@ -160,7 +197,10 @@ hr {
 
 .section_footer .logo {
 	width: 2.5vw;
+	height: 2.5vw;
 	min-width: 25px;
+	min-height: 25px;
+	background: var(--logo);
 	margin: auto;
 	display: block;
 }
@@ -242,7 +282,6 @@ hr {
 
 	.section_content {
 		position: relative;
-		color: #000;
 		padding: 0 0 10vh 0;
 		top: 5vh;
 	}
@@ -267,4 +306,10 @@ hr {
 	.section_footer .divider {
 		display: none;
 	}
+}
+
+@media (prefers-color-scheme: dark) {
+	.section_header {
+		/* background-color: rgba(0, 0, 0, 0); */
+	}	
 }
