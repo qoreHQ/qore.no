@@ -1,24 +1,31 @@
+/**
+ * Set copyleft info to current year
+ */
 document.getElementById('copyright-year').outerHTML = new Date().getYear() + 1900
 
+/*
+ * Handle color scheme selection
+ */
 let isDarkMode = false
+setColorScheme()
+
+/**
+ * Preload toggle svg to avoid flicker on hover
+ */
+preloadImage('img/light.svg')
+preloadImage('img/dark.svg')
 
 const toggle = document.getElementById('appearance-toggle')
-toggle.addEventListener('click', toggleAppearance, false)
+toggle.addEventListener('click', () => activateDarkMode(!isDarkMode), false)
 
-function toggleAppearance() {
-    isDarkMode ? activateLightMode() : activateDarkMode()
-}
-
-function activateDarkMode() {
-    document.getElementsByTagName('body')[0].classList.add('dark-mode')
-    document.getElementsByTagName('body')[0].classList.remove('light-mode')
-    isDarkMode = true
-}
-
-function activateLightMode() {
-    document.getElementsByTagName('body')[0].classList.add('light-mode')
-    document.getElementsByTagName('body')[0].classList.remove('dark-mode')
-    isDarkMode = false
+/**
+ * Updates the body class name to reflect the current theme
+ */
+function activateDarkMode(dark) {
+    const body = document.getElementsByTagName('body')[0]
+    body.classList.add(dark ? 'dark-mode' : 'light-mode')
+    body.classList.remove(dark ? 'light-mode' : 'dark-mode')
+    isDarkMode = dark
 }
 
 /**
@@ -34,20 +41,26 @@ function setColorScheme() {
 
     window
         .matchMedia('(prefers-color-scheme: dark)')
-        .addListener((e) => e.matches && activateDarkMode())
+        .addListener((e) => e.matches && activateDarkMode(true))
     window
         .matchMedia('(prefers-color-scheme: light)')
-        .addListener((e) => e.matches && activateLightMode())
+        .addListener((e) => e.matches && activateDarkMode(false))
 
-    if (isDarkMode) activateDarkMode()
-    if (isLightMode) activateLightMode()
+    if (isDarkMode) activateDarkMode(true)
+    if (isLightMode) activateDarkMode(false)
     if (isNotSpecified || hasNoSupport) {
         now = new Date()
         hour = now.getHours()
-        if (hour < 4 || hour >= 16) {
-            activateDarkMode()
+        if (hour < 5 || hour >= 18) {
+            activateDarkMode(true)
         }
     }
 }
 
-setColorScheme()
+/**
+ * Preloads images to avoid load times
+ */
+function preloadImage(url) {
+    var img = new Image()
+    img.src = url
+}
