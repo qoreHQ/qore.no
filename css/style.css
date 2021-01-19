@@ -29,10 +29,10 @@
 .dark-mode {
 	--background: #1C1E27;
 	--foreground: #fff;
-	--accent: #fcee54;
+	--accent: #85eea7;
 	--secondary-background: rgba(255, 255, 255, .025);
 	--secondary-foreground: #fff;
-	--secondary-accent: #85eea7;
+	--secondary-accent: #fcee54;
 	--logo: url(../img/qore-logo-white.svg);
 	--lower-texture: url(../img/geo_lower_white.svg);
 	--appearance-toggle: url(../img/dark.svg);
