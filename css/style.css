@@ -7,6 +7,8 @@
 	--secondary-accent: #fff;
 	--logo: url(../img/qore-logo-black.svg);
 	--lower-texture: url(../img/geo_lower_black.svg);
+	--appearance-toggle: url(../img/light.svg);
+	--appearance-toggle-inv: url(../img/dark.svg);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,7 +21,35 @@
 		--secondary-accent: #fcee54;
 		--logo: url(../img/qore-logo-white.svg);
 		--lower-texture: url(../img/geo_lower_white.svg);
+		--appearance-toggle: url(../img/dark.svg);
+		--appearance-toggle-inv: url(../img/light.svg);
 	}
+}
+
+.dark-mode {
+	--background: #1C1E27;
+	--foreground: #fff;
+	--accent: #fcee54;
+	--secondary-background: rgba(255, 255, 255, .025);
+	--secondary-foreground: #fff;
+	--secondary-accent: #85eea7;
+	--logo: url(../img/qore-logo-white.svg);
+	--lower-texture: url(../img/geo_lower_white.svg);
+	--appearance-toggle: url(../img/dark.svg);
+	--appearance-toggle-inv: url(../img/light.svg);
+}
+
+.light-mode {
+	--background: #fff;
+	--foreground: #000;
+	--accent: #5d7587;
+	--secondary-background: #000;
+	--secondary-foreground: #fff;
+	--secondary-accent: #fff;
+	--logo: url(../img/qore-logo-black.svg);
+	--lower-texture: url(../img/geo_lower_black.svg);
+	--appearance-toggle: url(../img/light.svg);
+	--appearance-toggle-inv: url(../img/dark.svg);
 }
 
 ::selection { 
@@ -29,6 +59,27 @@
 ::-moz-selection { 
 	background-color: var(--accent); 
 	color: var(--background);
+}
+
+#appearance-toggle {
+	width: 4vw;
+	height: 4vw;
+
+	min-width: 40px;
+	min-height: 40px;
+	max-width: 70px;
+	max-height: 70px;
+
+	background-image: var(--appearance-toggle);
+	position: absolute;
+	top: 2vh;
+	right: 2vh;
+	opacity: .5;
+}
+
+#appearance-toggle:hover {
+	background-image: var(--appearance-toggle-inv);
+	cursor: pointer;
 }
 
 body {
