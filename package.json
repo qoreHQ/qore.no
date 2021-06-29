@@ -1,0 +1,35 @@
+{
+  "name": "qore.no",
+  "version": "1.0.0",
+  "description": "Website for qore.no",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "build-css": "node-sass --include-path public/scss public/scss/style.scss public/css/style.css",
+    "dev": "nodemon -e scss -x 'npm run build-css && npm start'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qoreHQ/qore.no.git"
+  },
+  "keywords": [
+    "website",
+    "static",
+    "css"
+  ],
+  "author": "qore",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/qoreHQ/qore.no/issues"
+  },
+  "homepage": "https://github.com/qoreHQ/qore.no#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "fs": "^0.0.1-security"
+  },
+  "devDependencies": {
+    "node-sass": "^5.0.0",
+    "nodemon": "^2.0.7"
+  }
+}

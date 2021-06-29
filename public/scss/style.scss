@@ -1,0 +1,368 @@
+//
+// Stylesheet for qore.no
+// https://github.com/qoreHQ/qore.no
+// Copyleft GPL-3.0
+//
+
+// Color schemes
+// --------------------------------
+@mixin light-mode {
+	--background: #fff;
+	--foreground: #000;
+	--accent: #5d7587;
+	--secondary-background: #000;
+	--secondary-foreground: #fff;
+	--secondary-accent: #fff;
+	--logo: url(../img/qore-logo-black.svg);
+	--lower-texture: url(../img/geo_lower_black.svg);
+	--appearance-toggle: url(../img/light.svg);
+	--appearance-toggle-inv: url(../img/dark.svg);
+}
+@mixin dark-mode {
+	--background: #1c1e27;
+	--foreground: #fff;
+	--accent: #85eea7;
+	--secondary-background: rgba(255, 255, 255, 0.025);
+	--secondary-foreground: #fff;
+	--secondary-accent: #fcee54;
+	--logo: url(../img/qore-logo-white.svg);
+	--lower-texture: url(../img/geo_lower_white.svg);
+	--appearance-toggle: url(../img/dark.svg);
+	--appearance-toggle-inv: url(../img/light.svg);
+}
+
+:root {
+	@include light-mode;
+}
+@media (prefers-color-scheme: dark) {
+	:root {
+		@include dark-mode;
+	}
+}
+.light-mode {
+	@include light-mode;
+}
+.dark-mode {
+	@include dark-mode;
+}
+
+#appearance-toggle {
+	width: 4vw;
+	height: 4vw;
+
+	min-width: 40px;
+	min-height: 40px;
+	max-width: 70px;
+	max-height: 70px;
+
+	background-image: var(--appearance-toggle);
+	position: absolute;
+	top: 2vh;
+	right: 2vh;
+	opacity: 0.5;
+
+	&:hover {
+		background-image: var(--appearance-toggle-inv);
+		cursor: pointer;
+	}
+}
+
+// Selection
+// --------------------------------
+::selection {
+	background-color: var(--accent);
+	color: var(--background);
+}
+::-moz-selection {
+	background-color: var(--accent);
+	color: var(--background);
+}
+
+// Globals
+// --------------------------------
+body {
+	background-color: var(--background);
+	color: var(--foreground);
+	font-family: "Roboto", Helvetica, Arial, sans-serif;
+}
+
+a,
+p,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+table {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizelegibility;
+}
+
+p {
+	font-size: 1.2rem;
+}
+
+a {
+	text-decoration: underline;
+	color: inherit;
+	&:hover {
+		color: var(--accent);
+	}
+	&:active {
+		color: var(--secondary-accent);
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: "JetBrains Mono", monospace;
+}
+
+h2 {
+	font-size: 2rem;
+}
+
+h3 {
+	font-weight: 400;
+	font-size: 1.8rem;
+}
+
+hr {
+	height: 2px;
+	background-color: var(--secondary-foreground);
+	margin-right: -20vw;
+	border: 0;
+}
+
+.right {
+	text-align: right;
+}
+
+// Sections
+// --------------------------------
+.section {
+	&_header {
+		background: url(../img/geo_white.svg) repeat-x top center;
+		background-size: auto 30vh;
+		background-color: var(--secondary-background);
+		color: var(--secondary-foreground);
+		padding-top: 15vh;
+		padding-bottom: 15vh;
+	}
+
+	&_introduction {
+		width: 25vw;
+		margin-left: 10vw;
+		hr {
+			margin-right: -20vw;
+			height: 1px;
+			position: relative;
+			z-index: 20;
+		}
+		.top-logo {
+			width: 50%;
+			max-width: 180px;
+			margin-bottom: 2.5vh;
+		}
+		&_text {
+			width: 25vw;
+			margin-left: 10vw;
+		}
+	}
+
+	&_coverimage {
+		width: 45vw;
+		height: 80vh;
+		position: absolute;
+		top: 10vh;
+		right: 10vw;
+		z-index: 10;
+		background: url("../img/pexels-maria-orlova-4916517.jpg") no-repeat center center;
+		background: -webkit-image-set(
+				url("../img/pexels-maria-orlova-4916517.jpg") 1x,
+				url("../img/pexels-maria-orlova-4916517@2x.jpg") 2x
+			)
+			no-repeat center center;
+		background-size: cover;
+		img {
+			width: 100%;
+		}
+		.coverimage-text {
+			position: absolute;
+			top: 5vh;
+			right: 5vw;
+			font-family: "JetBrains Mono", monospace;
+			font-size: 3rem;
+			color: var(--secondary-foreground);
+		}
+	}
+
+	&_subheader {
+		z-index: 40;
+		position: relative;
+		/* color: #000; */
+		width: 35vw;
+		padding: 15vh 0 30vh 10vw;
+		span {
+			color: var(--foreground);
+			padding-bottom: 0;
+			font-size: 1.2rem;
+		}
+		.logo {
+			margin-top: 2.5vh;
+			margin-bottom: 2.5vh;
+			width: 2.5vw;
+		}
+	}
+
+	&_portfolio {
+		background-color: var(--secondary-background);
+		color: var(--secondary-foreground);
+		width: 55vw;
+		margin-left: auto;
+		padding: 5vh 10vw 5vh 5vh;
+		h2 {
+			margin-left: 15vw;
+		}
+	}
+
+	&_content {
+		z-index: 30;
+		position: absolute;
+		width: 100%;
+		top: 100vh;
+		background: var(--lower-texture) repeat-x bottom center;
+		background-size: auto 30vh;
+		padding: 0 0 10vh 0;
+
+		& > p {
+			padding: 0.5vh 5vw 0.5vh 5vw;
+		}
+	}
+
+	&_footer {
+		margin: 15vh 0 35vh 0;
+		font-family: "JetBrains Mono", monospace;
+		padding: 0 10vw 0 10vw;
+		.logo {
+			width: 2.5vw;
+			height: 2.5vw;
+			min-width: 25px;
+			min-height: 25px;
+			background: var(--logo);
+			margin: auto;
+			display: block;
+		}
+		p {
+			width: 50%;
+			float: left;
+			display: block;
+			margin-top: 5vh;
+			&:last-child {
+				padding-top: 0.5em;
+				text-align: right;
+			}
+		}
+	}
+}
+
+// Responsive - Less than 900px
+// --------------------------------
+@media screen and (max-width: 900px) {
+	.section_introduction,
+	.section_introduction_text {
+		width: 35vw;
+		margin-left: 5vw;
+	}
+	.section_coverimage {
+		width: 50vw;
+		right: 5vw;
+	}
+	.section_subheader {
+		padding: 10vh 0 30vh 5vw;
+		width: 40vw;
+	}
+	.section_portfolio {
+		padding-right: 5vw;
+		h2 {
+			margin-left: 0;
+		}
+	}
+	.section_footer p {
+		width: 100%;
+		float: left;
+		display: block;
+		margin-top: 5vh;
+		&:last-child {
+			padding-top: 0;
+			text-align: left;
+		}
+	}
+}
+
+// Responsive - Less than 550px
+// --------------------------------
+@media screen and (max-width: 550px) {
+	.section {
+		&_header {
+			padding-top: 10vh;
+			padding-bottom: 10vh;
+		}
+		&_coverimage {
+			right: 10vw;
+			width: 60vw;
+			height: 80vh;
+			position: relative;
+			margin-left: auto;
+			top: 0;
+		}
+		&_introduction {
+			position: absolute;
+			top: 20vh;
+			z-index: 20;
+			margin-left: 10vw;
+			hr {
+				margin-right: 0;
+			}
+			&_text {
+				position: relative;
+				width: 80vw;
+				margin: auto;
+				margin-top: 10vh;
+			}
+		}
+		&_content {
+			position: relative;
+			padding: 0 0 10vh 0;
+			top: 5vh;
+		}
+		&_subheader {
+			z-index: 40;
+			position: relative;
+			width: 80vw;
+			padding: 0;
+			margin: 10vh 10vw 10vh 10vw;
+		}
+		&_portfolio {
+			width: 90vw;
+			padding: 5vh 10vw 5vh 5vh;
+		}
+		&_footer p {
+			text-align: center;
+			&:last-child a {
+				display: block;
+				padding: 0.25rem 0 0.25rem 0;
+			}
+			.divider {
+				display: none;
+			}
+		}
+	}
+}

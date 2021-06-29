@@ -1,0 +1,24 @@
+/* Jetbrains Mono Regular */
+@font-face {
+    font-family: "JetBrains Mono";
+    src: url('JetBrainsMono-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Jetbrains Mono Bold */
+@font-face {
+    font-family: "JetBrains Mono";
+    src: url('JetBrainsMono-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Roboto Regular */
+@font-face {
+    font-family: "Roboto";
+    src: url('Roboto-Regular.woff2?v=2.137') format('woff2'),
+        url('Roboto-Regular.woff?v=2.137') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
