@@ -29,7 +29,7 @@
     "fs": "^0.0.1-security"
   },
   "devDependencies": {
-    "node-sass": "^5.0.0",
+    "node-sass": "^7.0.1",
     "nodemon": "^2.0.7"
   }
 }
