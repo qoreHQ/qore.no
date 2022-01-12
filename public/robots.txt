@@ -1,0 +1,2 @@
+User-agent: SemrushBot-SWA
+Disallow: /
