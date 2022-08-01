@@ -174,6 +174,7 @@ hr {
 		&_text {
 			width: 25vw;
 			margin-left: 10vw;
+			max-width: 500px;
 		}
 	}
 
@@ -184,12 +185,13 @@ hr {
 		top: 10vh;
 		right: 10vw;
 		z-index: 10;
+		max-width: 100vh;
 		background: url("../img/pexels-maria-orlova-4916517.jpg") no-repeat center center;
 		background: -webkit-image-set(
 				url("../img/pexels-maria-orlova-4916517.jpg") 1x,
 				url("../img/pexels-maria-orlova-4916517@2x.jpg") 2x
 			)
-			no-repeat center center;
+			no-repeat center bottom;
 		background-size: cover;
 		img {
 			width: 100%;
@@ -210,6 +212,9 @@ hr {
 		/* color: #000; */
 		width: 35vw;
 		padding: 15vh 0 30vh 10vw;
+		* {
+			max-width: 500px;
+		}
 		span {
 			color: var(--foreground);
 			padding-bottom: 0;
@@ -226,6 +231,7 @@ hr {
 		background-color: var(--secondary-background);
 		color: var(--secondary-foreground);
 		width: 55vw;
+		max-width: calc(100vh + 10vw);
 		margin-left: auto;
 		padding: 5vh 10vw 5vh 5vh;
 		h2 {
