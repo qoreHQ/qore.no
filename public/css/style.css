@@ -125,6 +125,11 @@ hr {
 .right {
   text-align: right; }
 
+.discreet-link {
+  text-decoration: none; }
+  .discreet-link:hover {
+    text-decoration: none; }
+
 .section_header {
   background: url(../img/geo_white.svg) repeat-x top center;
   background-size: auto 30vh;
