@@ -19,6 +19,16 @@ const toggle = document.getElementById('appearance-toggle')
 toggle.addEventListener('click', () => activateDarkMode(!isDarkMode), false)
 
 /**
+ * Set favicon based on browser color scheme
+ */
+const DARK = '(prefers-color-scheme: dark)'
+const mqDark = window.matchMedia(DARK)
+const favicons = document.querySelectorAll('link[rel="icon"]')
+favicons.forEach((link) => {
+    link.href = mqDark ? link.dataset.hrefDark : link.dataset.hrefLight
+})
+
+/**
  * Updates the body class name to reflect the current theme
  */
 function activateDarkMode(dark) {
