@@ -1,4 +1,7 @@
-<img src="https://qore.no/res/logo-text.svg" width="100" alt="qore">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://qore.no/res/logo-text-white.svg">
+  <img width="100" alt="qore" src="https://qore.no/res/logo-text.svg">
+</picture>
 
 # Webpage for qore
 https://qore.no
